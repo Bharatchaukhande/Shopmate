@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Sansation:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+*{
+    padding:0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: 'PT Sans',sans-serif;
+    font-weight:   200;
+}
+html{
+    font-size: clamp(0.875rem,1vw + 0.5rem,1.125rem);
+}
+a{
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+}
+.imgstyle{
+    height:150px;
+    width:100%;
+    border-radius:10px;
+    object-fit:contain;
+    border:1px solid black;
+    @media (max-width:768px) {
+         height: 130px;
+    }
+    @media (max-width:600px) {
+         height: 125px;
+    }
+    
+}
+.imgstyle:hover{
+   box-shadow: 1px 1px 10px  black;
+}
+.category-box-main{
+    @media (max-width:630px) {
+        width: 200px!important;
+    }
+    @media (max-width:480px) {
+        width: 300px!important;
+    }
+}
+.price{
+    @media (max-width:630px) {
+       font-size: 18px!important;
+    }
+}
+.category-box-insidediv{
+    @media (max-width:630px) {
+        height: 150px!important;;
+    }
+    @media (max-width:480px) {
+        height: 200px!important;
+        margin-top: 10px!important;
+    }
+}
+.main-category-screen{
+     gap: 30px!important;
+    @media (max-width:480px) {
+       gap: 15px!important;
+    }
+     @media (max-width:630px) {
+       gap: 20px!important;
+    }
+}
+.productdetails-main{
+    @media (max-width:930px) {
+        max-width: 400px!important;
+        padding: 20px!important;
+    }
+    @media (max-width:768px) {
+        max-width: 320px!important;
+        padding: 15px!important;
+        text-align: center;
+        
+        
+    }
+    @media (max-width:600px) {
+        max-width: 300px!important;
+        padding: 15px!important;
+    }
+     @media (max-width:480px) {
+        max-width: 250px!important;
+        padding: 10px!important;
+    }
+    
+}
+.productdetails-main-img{
+    @media (max-width:768px) {
+        height: 250px!important;
+        width: 250px!important;
+    }
+    @media (max-width:600px) {
+        height: 230px!important;
+        width: 200px!important;
+    }
+    @media (max-width:480px) {
+        height: 210px!important;
+        width: 180px!important;
+    }
+}
+.productdetails-images{
+    @media (max-width:600px) {
+        width: 150px!important;
+    }
+    @media (max-width:768px) {
+        width: 200px!important;
+    }
+    @media (max-width:480px) {
+        width: 170px!important;
+    }
+}  
+.productsdetails-propermain{
+    @media (max-width:600px) {
+        gap: 10px!important;
+        
+    }
+     @media (max-width:480px) {
+        gap: 5px!important;
+        margin-left: 5px;;
+        
+    }
+}
+
+     
