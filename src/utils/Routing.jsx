@@ -18,8 +18,8 @@ const Routing = () => {
     <div>
         <Navbar/>
         <Routes>
-            <Route element={<Signup/>} path='/'/>
-            <Route element={<Home/>} path='/home'/>
+            <Route element={<Home/>} path='/'/>
+            <Route element={<Signup/>} path='/signup'/>
             <Route element={<Ecomcards/>} path='/shop'/>
              <Route element={<Logged/>} path='/logged'/>
               <Route element={<Mens/>} path='/mens'/>

@@ -10,9 +10,9 @@ import { useCart } from '../Cart/Cartcontext';
 
 
 const Navbar = () => {
-  const {cartItems}=useCart()
+  const {cartItems,loginCheck}=useCart()
   const username = JSON.parse(localStorage.getItem('username'))
-  
+   console.log(loginCheck)
 
   const[view,setView] =useState(false)
   function showDiv(){
@@ -31,7 +31,7 @@ console.log('hii')
 
       {/* Middle links */}
       <div className="center-links" >
-        <Link to='/home' className='links'>Home</Link>
+        <Link to='/' className='links'>Home</Link>
         <div className='dropdown-main' >
         <Link to='/shop'  className='links'>Shop</Link>
         <ul className='dropdown'   >
@@ -46,14 +46,14 @@ console.log('hii')
       <div className='righticons' >
         
         
-        <Link to='/logged' ><CgProfile  /></Link>
+        <Link to={loginCheck? '/logged' : '/signup'} ><CgProfile  /></Link>
       
         <Link to='/cart'><BsCart4  /><sup style={{color:'red'}}>{cartItems.length===0 ?'':(cartItems.length)}</sup></Link>
       </div>
        
         <div className={view?'sidebar':'sidebar-show'}><RxCross2 onClick={()=>showDiv()} className={view?'sidebarcross-none' :'sidebar-cross'} />
          <div className='sidebar-list'> 
-          <li onClick={()=>showDiv()} ><Link to='/home' className='links'>Home</Link></li>
+          <li onClick={()=>showDiv()} ><Link to='/' className='links'>Home</Link></li>
           <li onClick={()=>showDiv()}><Link to='/shop' className='links' >Shop</Link></li>
            <li onClick={()=>showDiv()}><Link to='/mens'className='links' >Mens</Link></li>
           <li onClick={()=>showDiv()} ><Link  to='/womens'className='links' >Womens</Link></li>

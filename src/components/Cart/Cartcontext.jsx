@@ -10,6 +10,9 @@ export const CartProvider = ({ children }) => {
     return storedCart ? storedCart : [];
     
   });
+
+  const [loginCheck,setLoginCheck]=useState(false)
+ 
       
   // Sync cartItems to localStorage on change
   useEffect(() => {
@@ -60,6 +63,8 @@ export const CartProvider = ({ children }) => {
 
   const clearCart = () => setCartItems([]);
 
+   
+
   return (
     <CartContext.Provider value={{
       cartItems,
@@ -67,7 +72,9 @@ export const CartProvider = ({ children }) => {
       removeFromCart,
       increaseQuantity,
       decreaseQuantity,
-      clearCart
+      clearCart,
+      setLoginCheck,
+      loginCheck,
     }}>
       {children}
     </CartContext.Provider>

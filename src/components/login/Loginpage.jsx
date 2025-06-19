@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { use, useState } from 'react';
 import './LoginPage.css'; // For custom styles
 import { BiColor } from 'react-icons/bi';
 import { useNavigate } from 'react-router-dom';
 import logo from '../../assets/logo.png';
+import { useCart } from '../Cart/Cartcontext';
 
 const LoginPage = () => {
   const[email,setEmail]=useState('')
   const[password,setPassword]=useState('')
   const[msg,setMsg]=useState('')
-
+    const {setLoginCheck}    = useCart()
+  
+ 
   const navigate = useNavigate()
  
   const handleChange =(e)=>{
@@ -21,23 +24,31 @@ const LoginPage = () => {
         }
   }
 
-   const handleSubmit = (e) => {
-    e.preventDefault();
-    const getDetails = JSON.parse(localStorage.getItem('users'))
-    {getDetails.map((currdata)=>{
-        if(currdata.email==email && currdata.password==password){
-          let username = currdata
-          localStorage.setItem('username',JSON.stringify(username))
-            alert('login succesful')
-            navigate('/home')
-        }else if(email == ''|| password == ''){
-            return setMsg('Enter all details')
-        }else return setMsg('Invalid email or password')
-    })}
-    setEmail('')
-    setPassword('')
-    
-  };
+const handleSubmit = (e) => {
+  e.preventDefault();
+
+  if (email === '' || password === '') {
+    return setMsg('Enter all details');
+  }
+
+  const getDetails = JSON.parse(localStorage.getItem('users')) || [];
+  const foundUser = getDetails.find(
+    (user) => user.email === email && user.password === password
+  );
+
+  if (foundUser) {
+    localStorage.setItem('username', JSON.stringify(foundUser));
+    alert('Login successful');
+    setLoginCheck(true);
+    navigate('/');
+  } else {
+    setMsg('Invalid email or password');
+  }
+
+  setEmail('');
+  setPassword('');
+};
+
  
   return (
     <div className="login-wrapper">
@@ -48,7 +59,7 @@ const LoginPage = () => {
        
         
         <h2>Sign in</h2>
-        <p></p>
+       
         <form onSubmit={handleSubmit}>
           <input
             type="email"

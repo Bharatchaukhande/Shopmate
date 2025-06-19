@@ -13,7 +13,7 @@ const Logged = () => {
         <div>
         <h2>Please login to view your profile.</h2>
         <h2 style={{fontSize:'20px',marginTop:'20px'}}> If you already have an account please <Link style={{color:'blue'}}  to='/login'><u>Login</u></Link></h2>
-         <h2 style={{fontSize:'20px',marginTop:'20px'}}> Please signup if you don't have an account please <Link style={{color:'blue'}}  to='/'><u>Signup</u></Link></h2>
+         <h2 style={{fontSize:'20px',marginTop:'20px'}}> Please signup if you don't have an account please <Link style={{color:'blue'}}  to='/signup'><u>Signup</u></Link></h2>
         </div>
       </div>
     );
