@@ -28,7 +28,7 @@ const Signup = () => {
             email:'',
             password:''
         })
-        alert("Signup succeful")
+        alert("Signup succefull")
         navigate('/login')
         }
     }

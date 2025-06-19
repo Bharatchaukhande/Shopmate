@@ -8,10 +8,10 @@ const Productsdetails = () => {
   const navigate = useNavigate();
   const [changeimg,setChangeimg]=useState(0)
     const item = state?.item
-  const {addToCart,loginCheck} = useCart()
+  const {addToCart,logged} = useCart()
 
   function  cartCheck(){
-    if(loginCheck){
+    if(logged){
         addToCart(item);
         alert('Added to Cart') 
     } else  alert('login to add items to cart')

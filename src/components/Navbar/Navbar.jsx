@@ -10,9 +10,10 @@ import { useCart } from '../Cart/Cartcontext';
 
 
 const Navbar = () => {
-  const {cartItems,loginCheck}=useCart()
+  const {cartItems,logged}=useCart()
+  console.log(logged)
   const username = JSON.parse(localStorage.getItem('username'))
-   console.log(loginCheck)
+  
 
   const[view,setView] =useState(false)
   function showDiv(){
@@ -46,7 +47,7 @@ console.log('hii')
       <div className='righticons' >
         
         
-        <Link to={loginCheck? '/logged' : '/signup'} ><CgProfile  /></Link>
+        <Link to={logged? '/logged' : '/signup'} ><CgProfile  /></Link>
       
         <Link to='/cart'><BsCart4  /><sup style={{color:'red'}}>{cartItems.length===0 ?'':(cartItems.length)}</sup></Link>
       </div>

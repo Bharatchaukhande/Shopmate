@@ -12,7 +12,14 @@ export const CartProvider = ({ children }) => {
   });
 
   const [loginCheck,setLoginCheck]=useState(false)
- 
+  localStorage.setItem('islogged',JSON.stringify(loginCheck))
+  const logged = JSON.parse(localStorage.getItem('islogged'))
+  
+  
+
+
+    
+
       
   // Sync cartItems to localStorage on change
   useEffect(() => {
@@ -75,6 +82,8 @@ export const CartProvider = ({ children }) => {
       clearCart,
       setLoginCheck,
       loginCheck,
+      logged,
+      
     }}>
       {children}
     </CartContext.Provider>

@@ -22,6 +22,7 @@ const Logged = () => {
     localStorage.removeItem('users')
     localStorage.removeItem('username')
     localStorage.removeItem('cartItems')
+    localStorage.removeItem('islogged')
     navigate('/')
   }
 
