@@ -2,10 +2,12 @@ import React from 'react';
 import logo from '../../assets/logo.png';
 import '../../index.css';
 import { Link, useNavigate } from 'react-router-dom';
+import { useCart } from '../Cart/Cartcontext';
 
 const Logged = () => {
   const user =  JSON.parse(localStorage.getItem('username'));
   const navigate = useNavigate()
+  const {setLoginCheck}=useCart()
 
   if (!user) {
     return (
@@ -22,7 +24,7 @@ const Logged = () => {
     localStorage.removeItem('users')
     localStorage.removeItem('username')
     localStorage.removeItem('cartItems')
-    localStorage.removeItem('islogged')
+    setLoginCheck(false)
     navigate('/')
   }
 
