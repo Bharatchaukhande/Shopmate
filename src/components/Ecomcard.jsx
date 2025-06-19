@@ -51,7 +51,7 @@ const Ecomcard = ({ item, index }) => {
           color: "white",
           textDecoration: "none"
         }}
-        >View Details</Link>
+        >Buy Now</Link>
     </div>
  
     </>

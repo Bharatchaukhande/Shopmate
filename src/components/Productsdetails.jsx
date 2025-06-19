@@ -8,9 +8,15 @@ const Productsdetails = () => {
   const navigate = useNavigate();
   const [changeimg,setChangeimg]=useState(0)
     const item = state?.item
- const {addToCart} = useCart()
+  const {addToCart,loginCheck} = useCart()
 
-
+  function  cartCheck(){
+    if(loginCheck){
+        addToCart(item);
+        alert('Added to Cart') 
+    } else  alert('login to add items to cart')
+  }
+  
   if (!item) {
     return (
       <div style={{ padding: "40px", textAlign: "center" }}>
@@ -44,10 +50,7 @@ const Productsdetails = () => {
       <p><strong>Description:</strong> {description}</p>
       <p><strong>Rating:</strong> {rating?.rate} ({rating?.count} reviews)</p>
       <button onClick={() => navigate(-1)} style={{padding:'8px 16px',backgroundColor:" #1b1b1b",border:'none',borderRadius:'8px',color:"white",marginRight:'10px'}}>Go Back</button>
-       <button onClick={()=>{
-        addToCart(item);
-        alert('Added to Cart')
-        }}   style={{padding:'8px 16px',backgroundColor:" #1b1b1b",border:'none',borderRadius:'8px',color:"white"}}>Add to cart</button>
+       <button onClick={ ()=>cartCheck()}   style={{padding:'8px 16px',backgroundColor:" #1b1b1b",border:'none',borderRadius:'8px',color:"white"}}>Add to cart</button>
     </div>
     </div>
   );
