@@ -9,6 +9,7 @@ const Productsdetails = () => {
   const [changeimg,setChangeimg]=useState(0)
     const item = state?.item
   const {addToCart,logged} = useCart()
+  console.log(logged) 
 
   function  cartCheck(){
     if(logged){

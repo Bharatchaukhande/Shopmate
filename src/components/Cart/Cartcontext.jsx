@@ -11,10 +11,19 @@ export const CartProvider = ({ children }) => {
     
   });
 
-  const [loginCheck,setLoginCheck]=useState(false)
-  localStorage.setItem('islogged',JSON.stringify(loginCheck))
-  const logged = JSON.parse(localStorage.getItem('islogged'))
-  
+   // ✅ Initialize from localStorage on first load
+  const [loginCheck, setLoginCheck] = useState(() => {
+    const stored = localStorage.getItem('islogged');
+    return stored ? JSON.parse(stored) : false;
+  });
+
+  // ✅ Update localStorage only when loginCheck changes
+  useEffect(() => {
+    localStorage.setItem('islogged', JSON.stringify(loginCheck));
+  }, [loginCheck]);
+
+  const logged = loginCheck; // just use state instead of re-reading localStorage
+  console.log(logged)
   
 
 
