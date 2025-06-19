@@ -8,7 +8,7 @@ import { CartProvider } from './components/Cart/Cartcontext.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <CartProvider>
-    <BrowserRouter basename='Shopmate'>
+    <BrowserRouter basename='/Shopmate'>
     <App />
     </BrowserRouter>
     </CartProvider>

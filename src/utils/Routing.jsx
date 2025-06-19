@@ -11,12 +11,12 @@ import Womens from '../Pages/Womens'
 import Signup from '../components/login/Signup'
 import LoginPage from '../components/login/Loginpage'
 import Footer from '../components/Footer/Footer'
-import Logged from '../components/Logged/Logged'
+import Logged from '../components/Logged/Logged'                     
 
 const Routing = () => {
   return (
     <div>
-       {} <Navbar/>
+        <Navbar/>
         <Routes>
             <Route element={<Signup/>} path='/'/>
             <Route element={<Home/>} path='/home'/>
