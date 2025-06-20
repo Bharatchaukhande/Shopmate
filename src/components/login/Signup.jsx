@@ -9,7 +9,7 @@ const Signup = () => {
         email:'',
         password:''
     })
-    const [arr,setArr]= useState([])
+
     function handleChange(e){
         const{name,value}=e.target
         setData({...data,[name]:value})
