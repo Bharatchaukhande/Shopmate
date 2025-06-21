@@ -3,16 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage":"https://github.com/Bharatchaukhande/Shopmate",
+  "homepage": "https://github.com/Bharatchaukhande/Shopmate",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy":"npm run build",
+    "predeploy": "npm run build",
     "deploy": "gh-pages -d dist"
   },
   "dependencies": {
+    "@gsap/react": "^2.1.2",
     "@react-icons/all-files": "^4.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
